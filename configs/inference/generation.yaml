@@ -1,0 +1,23 @@
+model:
+  trainable_modules:
+    gen_model: "all"
+  gradient_checkpointing: false
+  und:
+    pretrained_model_path: checkpoints/Qwen3-VL-8B-Instruct
+    only_last_hidden_states: false
+    add_source_video: true
+  gen:
+    pretrained_model_path: checkpoints/Wan2.2-TI2V-5B-Diffusers
+    base_timestep_shift: 1.0
+    num_attn_token_base_shift: 64
+    timestep_shift_scale: 0.5
+    use_source_embedding: true
+
+data:
+  und_temporal_downsample_factor: 15
+
+generation:
+  negative_prompt: "Generate an image: 色调艳丽，过曝，静态，细节模糊不清，字幕，风格，作品，画作，画面，静止，整体发灰，最差质量，低质量，JPEG压缩残留，丑陋的，残缺的，多余的手指，画得不好的手部，画得不好的脸部，畸形的，毁容的，形态畸形的肢体，手指融合，静止不动的画面，杂乱的背景，三条腿，背景人很多，倒着走"
+  guidance_scale: 5.0
+  guidance_scale_edit: 2.5
+  guidance_scale_visual: 1.5

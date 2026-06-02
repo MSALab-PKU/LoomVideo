@@ -1,0 +1,58 @@
+benchmarks:
+  guidance_scale: 5.0
+  guidance_scale_edit: 2.5
+  guidance_scale_visual: 1.5
+
+dataset:
+  # ---- Image Generation ----
+  GenEval:
+    process_func_name: process_only_text_data
+    data_root: ""
+    data_json_dir: /path/to/GenEval/single_jsons
+    num_samples: 553
+    metrics: [geneval]
+
+  ImgEdit-Bench:
+    process_func_name: process_only_source_image_data
+    data_root: /path/to/ImgEdit-Bench/singleturn
+    data_json_dir: /path/to/ImgEdit-Bench/single_jsons
+    num_samples: 737
+    metrics: [imgedit]
+
+  # ---- Video Generation ----
+  VBench:
+    process_func_name: process_only_text_for_video_data
+    data_root: /path/to/VBench/singleturn
+    data_json_dir: /path/to/VBench/single_jsons
+    num_samples: 165
+    metrics: [vbench]
+
+  # ---- Video Editing ----
+  OpenVE-Bench:
+    process_func_name: process_only_source_video_data
+    data_root: /path/to/OpenVE-Bench/videos
+    data_json_dir: /path/to/OpenVE-Bench/single_jsons
+    num_samples: 431
+    metrics: [openve]
+
+  RefVIE-Bench:
+    process_func_name: process_refvie_data
+    data_root: /path/to/RefVIE-Bench
+    data_json_dir: /path/to/RefVIE-Bench/single_jsons
+    num_samples: 120
+    metrics: [refvie]
+
+  # ---- Intelligent-VBench ----
+  Intelligent-VBench-MI2V:
+    process_func_name: process_intelligent_vbench_si2v_data
+    data_root: /path/to/IntelligentVBench
+    data_json_dir: /path/to/IntelligentVBench/single_jsons/MI2V
+    num_samples: 320
+    metrics: [intelligent_vbench]
+
+  Intelligent-VBench-TIV2V:
+    process_func_name: process_source_video_with_ref_image_data
+    data_root: /path/to/IntelligentVBench
+    data_json_dir: /path/to/IntelligentVBench/single_jsons/TIV2V
+    num_samples: 210
+    metrics: [intelligent_vbench]

@@ -1,0 +1,41 @@
+[project]
+name = "loomvideo"
+version = "0.1.0"
+description = "LoomVideo: A highly efficient unified architecture for video generation and editing"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "diffusers",
+    "tokenizers",
+    "transformers==4.57.3",
+    "accelerate==1.12.0",
+    "ftfy",
+    "omegaconf",
+    "imageio",
+    "imageio-ffmpeg",
+    "decord",
+    "setuptools==69.5.1",
+    "deepspeed",
+    "torch>=2.0",
+    "torchvision",
+    "numpy",
+    "tqdm",
+    "pillow",
+    "qwen-vl-utils==0.0.8",
+    # Evaluation dependencies
+    "pandas",
+    "openai",
+    "open-clip-torch",
+    "pyiqa",
+]
+
+[project.optional-dependencies]
+eval = [
+    "clip",
+    "clip-benchmark",
+    "yapf==0.32.0",
+]
+
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"

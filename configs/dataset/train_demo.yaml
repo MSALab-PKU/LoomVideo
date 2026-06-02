@@ -1,0 +1,25 @@
+train:
+  video_editing:
+    task_weight: 1.0
+    datasets:
+      kiwi_edit:
+        process_func_name: process_video_edit_data
+        data_root: /path/to/your/data_root
+        data_json_dir: /path/to/your/kiwi_video_edit/single_jsons/train
+        num_samples: 2882998
+        sample_weight: 1.0
+
+val:
+  kiwi_edit:
+    process_func_name: process_video_edit_data
+    data_root: /path/to/your/data_root
+    data_json_dir: /path/to/your/kiwi_video_edit/single_jsons/val
+    num_samples: 50
+
+eval:
+  GenEval:
+    process_func_name: process_only_text_data
+    data_root: /path/to/your/data_root
+    data_json_dir: /path/to/your/GenEval/single_jsons
+    num_samples: 10
+    metrics: [geneval]

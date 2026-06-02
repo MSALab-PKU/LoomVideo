@@ -1,0 +1,4 @@
+deepspeed_config:
+  deepspeed_config_file: configs/deepspeed_stage2.json
+  zero3_init_flag: false
+distributed_type: DEEPSPEED

@@ -1,0 +1,50 @@
+seed: 0
+
+model:
+  trainable_modules:
+    gen_model: all
+  gradient_checkpointing: false
+  und:
+    pretrained_model_path: checkpoints/Qwen3-VL-8B-Instruct
+    only_last_hidden_states: false
+    add_source_video: true
+  gen:
+    pretrained_model_path: checkpoints/Wan2.2-TI2V-5B-Diffusers
+    vae:
+      scale_factor_spatial: 16
+      scale_factor_temporal: 4
+    transformer:
+      patch_size: [1, 2, 2]
+    base_timestep_shift: 1.0
+    num_attn_token_base_shift: 64
+    timestep_shift_scale: 0.5
+    use_source_embedding: true
+  evaluation:
+    # GenEval: Mask2Former + OpenCLIP model paths
+    geneval:
+      model_path: checkpoints/evaluation/mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco.pth
+      model_config_path: libs/mmdetection/configs/mask2former/mask2former_swin-s-p4-w7-224_lsj_8x2_50e_coco.py
+      clip_path: checkpoints/evaluation/ViT-L-14.pt
+    # Gemini API config (for OpenVE-Bench, RefVIE-Bench, Intelligent-VBench)
+    gemini:
+      api_key: "YOUR_GEMINI_API_KEY"
+      base_url: "YOUR_GEMINI_BASE_URL"
+      model: "gemini-2.5-pro-06-17"
+    # OpenAI API config (for ImgEdit-Bench)
+    openai:
+      api_key: "YOUR_OPENAI_API_KEY"
+      base_url: "YOUR_OPENAI_BASE_URL"
+      model: "gpt-4.1"
+
+data:
+  train:
+    resolution_buckets: ["640"]
+    fps: 24
+    num_frames: 97
+    und_temporal_downsample_factor: 15
+
+generation:
+  negative_prompt: "Oversaturated colors, overexposure, static, blurry details, subtitles, stylized, artwork, painting, still frame, overall gray tone, worst quality, low quality, JPEG artifacts, ugly, incomplete, extra fingers, poorly drawn hands, poorly drawn face, deformed, disfigured, malformed limbs, fused fingers, static frame, cluttered background, three legs, crowded background, walking backwards"
+  guidance_scale: 5.0
+  guidance_scale_edit: 2.5
+  guidance_scale_visual: 1.5
