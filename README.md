@@ -150,11 +150,17 @@ Additionally, install [Flash Attention](https://github.com/Dao-AILab/flash-atten
 
 ## Step 3: Download Model Weights
 
-Download the pretrained LoomVideo checkpoint from [Hugging Face](TODO) and place it under `checkpoints/LoomVideo/`:
+Download the pretrained LoomVideo checkpoint from [Hugging Face](https://huggingface.co/MSALab/LoomVideo) and place it under `checkpoints/LoomVideo/`:
 
 ```
 checkpoints/LoomVideo/
 └── gen_model.pth
+```
+
+We provide a helper script to download the weights automatically:
+
+```bash
+python hf_download.py
 ```
 
 You can also specify a custom path via the `--ckpt_path` argument at inference time.
