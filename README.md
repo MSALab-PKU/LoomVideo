@@ -5,14 +5,14 @@
 <h3>Peking University &middot; Alibaba Group</h3>
 
 <a href="TODO" target="_blank"><img src="https://img.shields.io/badge/Paper-b5212f.svg?logo=arxiv" height="22px"></a>
-<a href="TODO" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-d96902.svg" height="22px"></a>
+<a href="https://huggingface.co/MSALab/LoomVideo" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-d96902.svg" height="22px"></a>
 <a href="https://msalab-pku.github.io/projects/LoomVideo/index.html" target="_blank"><img src="https://img.shields.io/badge/Project%20Page-333399.svg?logo=homepage" height="22px"></a>
 
 </div>
 
 # 🔥 News
 
-- [2026-06-02] We release the [codebase](https://github.com/MSALab-PKU/LoomVideo) and [model weights](TODO) of LoomVideo!
+- [2026-06-02] We release the [codebase](https://github.com/MSALab-PKU/LoomVideo) and [model weights](https://huggingface.co/MSALab/LoomVideo) of LoomVideo!
 - [2026-06-02] We release the [project page](https://msalab-pku.github.io/projects/LoomVideo/index.html) of LoomVideo!
 
 # 📌 TL;DR
@@ -35,12 +35,12 @@
 
 LoomVideo supports **four** unified video generation and editing tasks within a single model:
 
-| Task | Input | Output | Description |
-|:-----|:------|:-------|:------------|
-| **Text-to-Video** | Text 📝 | Video 🎬 | Generate a video from a text prompt |
-| **Instruction Editing** | Video 🎬 + Text 📝 | Video 🎬 | Edit a video following text instructions |
-| **Instruction-Image Editing** | Video 🎬 + Image 🖼 + Text 📝 | Video 🎬 | Edit a video with a reference image as guidance |
-| **Multi-Image-to-Video** | Images 🖼 + Text 📝 | Video 🎬 | Compose multiple reference images into a coherent video |
+| Task                          | Input                      | Output  | Description                                             |
+| :---------------------------- | :------------------------- | :------ | :------------------------------------------------------ |
+| **Text-to-Video**             | Text 📝                     | Video 🎬 | Generate a video from a text prompt                     |
+| **Instruction Editing**       | Video 🎬 + Text 📝           | Video 🎬 | Edit a video following text instructions                |
+| **Instruction-Image Editing** | Video 🎬 + Image 🖼 + Text 📝 | Video 🎬 | Edit a video with a reference image as guidance         |
+| **Multi-Image-to-Video**      | Images 🖼 + Text 📝          | Video 🎬 | Compose multiple reference images into a coherent video |
 
 ### 🎬 Text-to-Video
 
@@ -294,12 +294,12 @@ Since our training relies heavily on proprietary datasets, we are unable to rele
 
 Below are the open-source datasets used in our training. You can download them or substitute with your own data:
 
-| Category | Dataset |
-|---|---|
-| Video Generation | [Koala-36M](https://huggingface.co/datasets/Koala-36M/Koala-36M-v1), [OpenVid-1M](https://huggingface.co/datasets/nkp37/OpenVid-1M) |
-| Image Editing | [CrispEdit-2M](https://huggingface.co/datasets/WeiChow/CrispEdit-2M), [OmniGen-2-Edit](https://huggingface.co/OmniGen2), [GPT-Image-Edit-1.5M](https://huggingface.co/datasets/UCSC-VLAA/GPT-Image-Edit-1.5M), [NHR-Edit](https://huggingface.co/datasets/iitolstykh/NHR-Edit), [Pico-Banana](https://huggingface.co/papers/2510.19808), [ShareGPT-4o-Image](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image) |
-| Video Editing | [KIWI-Edit](https://huggingface.co/datasets/linyq/kiwi_edit_training_data) |
-| Video Ref Editing / MI2V | [RefVIE](https://huggingface.co/datasets/linyq/kiwi_edit_training_data), [Phantom-Data](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M) |
+| Category                 | Dataset                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Video Generation         | [Koala-36M](https://huggingface.co/datasets/Koala-36M/Koala-36M-v1), [OpenVid-1M](https://huggingface.co/datasets/nkp37/OpenVid-1M)                                                                                                                                                                                                                                                                                                 |
+| Image Editing            | [CrispEdit-2M](https://huggingface.co/datasets/WeiChow/CrispEdit-2M), [OmniGen-2-Edit](https://huggingface.co/OmniGen2), [GPT-Image-Edit-1.5M](https://huggingface.co/datasets/UCSC-VLAA/GPT-Image-Edit-1.5M), [NHR-Edit](https://huggingface.co/datasets/iitolstykh/NHR-Edit), [Pico-Banana](https://github.com/apple/pico-banana-400k), [ShareGPT-4o-Image](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image) |
+| Video Editing            | [KIWI-Edit](https://huggingface.co/datasets/linyq/kiwi_edit_training_data)                                                                                                                                                                                                                                                                                                                                                          |
+| Video Ref Editing / MI2V | [RefVIE](https://huggingface.co/datasets/linyq/kiwi_edit_training_data), [Phantom-Data](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M)                                                                                                                                                                                                                                                                          |
 
 ## Organize Data as Single JSON Files
 
@@ -386,14 +386,14 @@ You may also organize your JSON files in any format you prefer, as long as you i
 
 Create a YAML config file to register your datasets. See `configs/dataset/train_demo.yaml` as a reference. The config is organized into `train`, `val`, and `eval` sections, each containing dataset entries with the following arguments:
 
-| Argument | Description |
-|---|---|
-| `task_weight` | Controls the sampling probability of this task group relative to others during training. |
+| Argument            | Description                                                                                  |
+| ------------------- | -------------------------------------------------------------------------------------------- |
+| `task_weight`       | Controls the sampling probability of this task group relative to others during training.     |
 | `process_func_name` | Name of the processing function in `src/dataset/processors.py` that parses each JSON sample. |
-| `data_root` | Base directory for resolving relative paths in JSON files. |
-| `data_json_dir` | Directory containing the JSON files (`0.json`, `1.json`, ...). |
-| `num_samples` | Total number of samples in the directory. |
-| `sample_weight` | Sampling weight of this dataset within its task group. |
+| `data_root`         | Base directory for resolving relative paths in JSON files.                                   |
+| `data_json_dir`     | Directory containing the JSON files (`0.json`, `1.json`, ...).                               |
+| `num_samples`       | Total number of samples in the directory.                                                    |
+| `sample_weight`     | Sampling weight of this dataset within its task group.                                       |
 
 
 # 🏋️ Training
@@ -404,34 +404,34 @@ The training behavior is fully controlled by a YAML config file (e.g., `configs/
 
 **Key arguments:**
 
-| Argument | Description |
-|---|---|
-| `log_dir` | Directory for saving logs, checkpoints, and generated samples. |
-| `dataset_config_path` | Path to the dataset config YAML file. |
-| `train_steps` | Total number of training iterations. |
-| `checkpointing_interval` | Save a checkpoint every N steps. |
-| `validation_interval` | Run validation every N steps. |
-| `evaluation_interval` | Run evaluation benchmarks every N steps. |
+| Argument                 | Description                                                    |
+| ------------------------ | -------------------------------------------------------------- |
+| `log_dir`                | Directory for saving logs, checkpoints, and generated samples. |
+| `dataset_config_path`    | Path to the dataset config YAML file.                          |
+| `train_steps`            | Total number of training iterations.                           |
+| `checkpointing_interval` | Save a checkpoint every N steps.                               |
+| `validation_interval`    | Run validation every N steps.                                  |
+| `evaluation_interval`    | Run evaluation benchmarks every N steps.                       |
 
 **Model settings:**
 
-| Argument | Description |
-|---|---|
-| `model.trainable_modules.gen_model` | Which modules to train. `"all"` trains the full generation model. |
-| `model.gradient_checkpointing` | Enable gradient checkpointing to reduce GPU memory usage. |
-| `model.und.pretrained_model_path` | Path to the pretrained understanding backbone. |
-| `model.gen.pretrained_model_path` | Path to the pretrained generation backbone. |
-| `model.pretrained_ckpt_path` | *(Optional)* Load weights from a previous training stage for continued training. |
+| Argument                            | Description                                                                      |
+| ----------------------------------- | -------------------------------------------------------------------------------- |
+| `model.trainable_modules.gen_model` | Which modules to train. `"all"` trains the full generation model.                |
+| `model.gradient_checkpointing`      | Enable gradient checkpointing to reduce GPU memory usage.                        |
+| `model.und.pretrained_model_path`   | Path to the pretrained understanding backbone.                                   |
+| `model.gen.pretrained_model_path`   | Path to the pretrained generation backbone.                                      |
+| `model.pretrained_ckpt_path`        | *(Optional)* Load weights from a previous training stage for continued training. |
 
 **Data settings:**
 
-| Argument | Description |
-|---|---|
-| `data.train.resolution_buckets` | List of resolution buckets for dynamic batching. |
-| `data.train.num_frames` | Number of frames per training sample. |
-| `data.train.fps` | Video FPS for frame sampling. |
-| `data.train.all_dropout_rate` | Probability of dropping all conditions (for unconditional training). |
-| `data.train.text_dropout_rate` | Probability of dropping text condition (for classifier-free guidance). |
+| Argument                        | Description                                                            |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| `data.train.resolution_buckets` | List of resolution buckets for dynamic batching.                       |
+| `data.train.num_frames`         | Number of frames per training sample.                                  |
+| `data.train.fps`                | Video FPS for frame sampling.                                          |
+| `data.train.all_dropout_rate`   | Probability of dropping all conditions (for unconditional training).   |
+| `data.train.text_dropout_rate`  | Probability of dropping text condition (for classifier-free guidance). |
 
 ## Launch Training
 
@@ -456,15 +456,15 @@ accelerate launch --num_processes=${NUM_GPUS} \
 
 We evaluate on the following benchmarks. Download each dataset and organize it into the same **single JSON** format used for training data (see [Data Preparation](#-data-preparation)):
 
-| Benchmark | Category | Samples |
-|---|---|---|
-| [GenEval](https://github.com/djghosh13/geneval) | Image Generation | 553 |
-| [ImgEdit-Bench](https://github.com/pku-yuangroup/imgedit) | Image Editing | 737 |
-| [VBench](https://github.com/Vchitect/VBench) | Video Generation | 165 |
-| [OpenVE-Bench](https://huggingface.co/datasets/Lewandofski/OpenVE-Bench) | Video Editing | 431 |
-| [RefVIE-Bench](https://huggingface.co/datasets/linyq/RefVIE-Bench) | Reference Video Editing | 120 |
-| [Intelligent-VBench-MI2V](https://github.com/Tencent-Hunyuan/OmniWeaving) | Multi-Image-to-Video | 320 |
-| [Intelligent-VBench-TIV2V](https://github.com/Tencent-Hunyuan/OmniWeaving) | Text-Image-Video-to-Video | 210 |
+| Benchmark                                                                  | Category                  | Samples |
+| -------------------------------------------------------------------------- | ------------------------- | ------- |
+| [GenEval](https://github.com/djghosh13/geneval)                            | Image Generation          | 553     |
+| [ImgEdit-Bench](https://github.com/pku-yuangroup/imgedit)                  | Image Editing             | 737     |
+| [VBench](https://github.com/Vchitect/VBench)                               | Video Generation          | 165     |
+| [OpenVE-Bench](https://huggingface.co/datasets/Lewandofski/OpenVE-Bench)   | Video Editing             | 431     |
+| [RefVIE-Bench](https://huggingface.co/datasets/linyq/RefVIE-Bench)         | Reference Video Editing   | 120     |
+| [Intelligent-VBench-MI2V](https://github.com/Tencent-Hunyuan/OmniWeaving)  | Multi-Image-to-Video      | 320     |
+| [Intelligent-VBench-TIV2V](https://github.com/Tencent-Hunyuan/OmniWeaving) | Text-Image-Video-to-Video | 210     |
 
 > 💡 For **Intelligent-VBench**, we split the original benchmark into two subsets based on task type — **MI2V** and **TIV2V**. Their JSON files should be placed in separate directories.
 
