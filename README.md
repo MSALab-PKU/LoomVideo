@@ -4,7 +4,7 @@
 
 <h3>Peking University &middot; Alibaba Group</h3>
 
-<a href="TODO" target="_blank"><img src="https://img.shields.io/badge/Paper-b5212f.svg?logo=arxiv" height="22px"></a>
+<a href="https://arxiv.org/abs/2606.06042" target="_blank"><img src="https://img.shields.io/badge/Paper-b5212f.svg?logo=arxiv" height="22px"></a>
 <a href="https://huggingface.co/MSALab/LoomVideo" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Model-d96902.svg" height="22px"></a>
 <a href="https://msalab-pku.github.io/projects/LoomVideo/index.html" target="_blank"><img src="https://img.shields.io/badge/Project%20Page-333399.svg?logo=homepage" height="22px"></a>
 
@@ -12,6 +12,7 @@
 
 # 🔥 News
 
+- [2026-06-05] We release LoomVideo [paper](https://arxiv.org/abs/2606.06042) on Arxiv!
 - [2026-06-02] We release the [codebase](https://github.com/MSALab-PKU/LoomVideo) and [model weights](https://huggingface.co/MSALab/LoomVideo) of LoomVideo!
 - [2026-06-02] We release the [project page](https://msalab-pku.github.io/projects/LoomVideo/index.html) of LoomVideo!
 
@@ -165,6 +166,8 @@ python hf_download.py
 
 You can also specify a custom path via the `--ckpt_path` argument at inference time.
 
+> 💡 Stage 3 model weights are now available. Higher-performance post-trained weights will be released as soon as possible!
+
 
 # 🎬 Inference
 LoomVideo provides a unified inference script that supports **four generation tasks** through a single entry point. Each task is selected via the `--task` flag.
@@ -300,12 +303,12 @@ Since our training relies heavily on proprietary datasets, we are unable to rele
 
 Below are the open-source datasets used in our training. You can download them or substitute with your own data:
 
-| Category                 | Dataset                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Video Generation         | [Koala-36M](https://huggingface.co/datasets/Koala-36M/Koala-36M-v1), [OpenVid-1M](https://huggingface.co/datasets/nkp37/OpenVid-1M)                                                                                                                                                                                                                                                                                                 |
+| Category                 | Dataset                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Video Generation         | [Koala-36M](https://huggingface.co/datasets/Koala-36M/Koala-36M-v1), [OpenVid-1M](https://huggingface.co/datasets/nkp37/OpenVid-1M)                                                                                                                                                                                                                                                                                                  |
 | Image Editing            | [CrispEdit-2M](https://huggingface.co/datasets/WeiChow/CrispEdit-2M), [OmniGen-2-Edit](https://huggingface.co/OmniGen2), [GPT-Image-Edit-1.5M](https://huggingface.co/datasets/UCSC-VLAA/GPT-Image-Edit-1.5M), [NHR-Edit](https://huggingface.co/datasets/iitolstykh/NHR-Edit), [Pico-Banana](https://github.com/apple/pico-banana-400k), [ShareGPT-4o-Image](https://huggingface.co/datasets/FreedomIntelligence/ShareGPT-4o-Image) |
-| Video Editing            | [KIWI-Edit](https://huggingface.co/datasets/linyq/kiwi_edit_training_data)                                                                                                                                                                                                                                                                                                                                                          |
-| Video Ref Editing / MI2V | [RefVIE](https://huggingface.co/datasets/linyq/kiwi_edit_training_data), [Phantom-Data](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M)                                                                                                                                                                                                                                                                          |
+| Video Editing            | [KIWI-Edit](https://huggingface.co/datasets/linyq/kiwi_edit_training_data)                                                                                                                                                                                                                                                                                                                                                           |
+| Video Ref Editing / MI2V | [RefVIE](https://huggingface.co/datasets/linyq/kiwi_edit_training_data), [Phantom-Data](https://huggingface.co/datasets/ZhuoweiChen/Phantom-data-Koala36M)                                                                                                                                                                                                                                                                           |
 
 ## Organize Data as Single JSON Files
 
@@ -584,4 +587,13 @@ Jianzong Wu (吴健宗): jzwu@stu.pku.edu.cn
 
 # 📄 Citation
 
-*TODO*
+If you find our work helpful, please consider giving us a ⭐ on this repo and citing our paper as follows:
+
+```bibtex
+@article{wu2026loomvideo,
+  title={LoomVideo: Unifying Multimodal Inputs into Video Generation and Editing},
+  author={Wu, Jianzong and Lian, Hao and Yang, Jiongfan and Hao, Dachao and Tian, Ye and Tong, Yunhai and Zhu, Jingyuan and Chen, Biaolong and Qi, Qiaosong and Zhang, Aixi and He, Wanggui and Liu, Mushui and Jiang, Hao},
+  journal={arXiv preprint arXiv:2606.06042},
+  year={2026}
+}
+```
