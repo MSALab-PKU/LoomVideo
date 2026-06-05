@@ -592,7 +592,7 @@ If you find our work helpful, please consider giving us a ⭐ on this repo and c
 ```bibtex
 @article{wu2026loomvideo,
   title={LoomVideo: Unifying Multimodal Inputs into Video Generation and Editing},
-  author={Wu, Jianzong and Lian, Hao and Yang, Jiongfan and Hao, Dachao and Tian, Ye and Tong, Yunhai and Zhu, Jingyuan and Chen, Biaolong and Qi, Qiaosong and Zhang, Aixi and He, Wanggui and Liu, Mushui and Jiang, Hao},
+  author={Wu, Jianzong and Lian, Hao and Yang, Jiongfan and Hao, Dachao and Tian, Ye and Tong, Yunhai and Zhu, Jingyuan and Chen, Biaolong and Qi, Qiaosong and Zhang, Aixi and He, Wanggui and Liu, Mushui and Huang, Pipei and Jiang, Hao},
   journal={arXiv preprint arXiv:2606.06042},
   year={2026}
 }
