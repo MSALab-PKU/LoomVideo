@@ -186,13 +186,13 @@ accelerate launch --num_processes=${NUM_GPUS} \
     --config_path configs/inference/generation.yaml \
     --ckpt_path checkpoints/LoomVideo \
     --task t2v \
-    --prompt "Your prompt here" \
+    --prompt "Vampire makeup face of beautiful girl, red contact lenses." \
     --height 480 \
     --width 832 \
     --num_frames 97 \
     --num_inference_steps 50 \
     --seed 0 \
-    --output_path outputs/t2v.mp4
+    --output_path outputs/t2v_demo.mp4
 ```
 
 ### 2. Instruction Editing (`edit`)
@@ -209,11 +209,11 @@ accelerate launch --num_processes=${NUM_GPUS} \
     --config_path configs/inference/generation.yaml \
     --ckpt_path checkpoints/LoomVideo \
     --task edit \
-    --prompt "Your editing instruction here" \
-    --source_video_path /path/to/source_video.mp4 \
+    --prompt "Apply the Impressionist aesthetic to this video, ensuring seamless temporal consistency across all frames. The result should emulate the fluid brushstroke techniques and atmospheric focus of 19th-century Impressionist art, with each frame retaining the original motion, character actions, and camera movements." \
+    --source_video_path /assets/demo/edit_input.mp4 \
     --num_inference_steps 50 \
     --seed 0 \
-    --output_path outputs/edit.mp4
+    --output_path outputs/edit_demo.mp4
 ```
 
 ### 3. Instruction-Image Editing (`ref_edit`)
@@ -230,12 +230,12 @@ accelerate launch --num_processes=${NUM_GPUS} \
     --config_path configs/inference/generation.yaml \
     --ckpt_path checkpoints/LoomVideo \
     --task ref_edit \
-    --prompt "Your editing instruction" \
-    --source_video_path /path/to/source_video.mp4 \
-    --ref_image_paths /path/to/ref1.jpg /path/to/ref2.jpg \
+    --prompt "Replace the green t-shirt of the man with the suit in the image." \
+    --source_video_path /assets/demo/ref_edit_input.mp4 \
+    --ref_image_paths /assets/demo/ref_edit_reference.jpg \
     --num_inference_steps 50 \
     --seed 0 \
-    --output_path outputs/ref_edit.mp4
+    --output_path outputs/ref_edit_demo.mp4
 ```
 
 ### 4. Multi-Image-to-Video (`mi2v`)
@@ -252,12 +252,12 @@ accelerate launch --num_processes=${NUM_GPUS} \
     --config_path configs/inference/generation.yaml \
     --ckpt_path checkpoints/LoomVideo \
     --task mi2v \
-    --prompt "Your prompt here" \
-    --ref_image_paths /path/to/img1.jpg /path/to/img2.jpg /path/to/img3.jpg \
+    --prompt "The man wearing a Polo shirt (@Image 2), black casual pants, white sneakers, sunglasses, and a watch, striding forward on the lawn (@Image 1) with one hand in his pocket." \
+    --ref_image_paths /assets/demo/mi2v_input_1.jpg /assets/demo/mi2v_input_2.jpg \
     --num_frames 97 \
     --num_inference_steps 50 \
     --seed 0 \
-    --output_path outputs/mi2v.mp4
+    --output_path outputs/mi2v_demo.mp4
 ```
 
 

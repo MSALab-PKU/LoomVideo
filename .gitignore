@@ -9,7 +9,6 @@ __pycache__/
 nohup
 /*.json*
 output*
-*.mp4
 *.mp3
 tests/
 :/*
