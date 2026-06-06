@@ -12,6 +12,7 @@
 
 # 🔥 News
 
+- [2026-06-06] We release the post-pretrained [model weights](https://huggingface.co/MSALab/LoomVideo) of LoomVideo!
 - [2026-06-05] We release LoomVideo [paper](https://arxiv.org/abs/2606.06042) on Arxiv!
 - [2026-06-02] We release the [codebase](https://github.com/MSALab-PKU/LoomVideo) and [model weights](https://huggingface.co/MSALab/LoomVideo) of LoomVideo!
 - [2026-06-02] We release the [project page](https://msalab-pku.github.io/projects/LoomVideo/index.html) of LoomVideo!
@@ -165,8 +166,6 @@ python hf_download.py
 ```
 
 You can also specify a custom path via the `--ckpt_path` argument at inference time.
-
-> 💡 Stage 3 model weights are now available. Higher-performance post-trained weights will be released as soon as possible!
 
 
 # 🎬 Inference
